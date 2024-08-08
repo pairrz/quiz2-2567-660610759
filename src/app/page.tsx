@@ -1,5 +1,9 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import { PostOwner } from "@/libs/types";
+import { CommentProps } from "@/libs/types";
+import { ReplyProps } from "@/libs/types";
+import { Comme } from "next/font/google";
 
 export default function Home() {
   return (
@@ -16,16 +20,16 @@ export default function Home() {
         <div className="vstack gap-3">
           <div className="d-flex align-items-center gap-3">
             <img
-              src="/profileImages/handsome.jpg"
+              src="/profileImages/me.jpg"
               width="48"
               height="48"
               className="rounded-circle"
               style={{ objectFit: "cover" }}
             />
-            <span className="fw-semibold fs-5">Chayanin Suatap 650610560</span>
+            <span className="fw-semibold fs-5">Dararat Buayim 660610759</span>
           </div>
 
-          <span>Quiz ง่ายจังเลยครับ ขอยาก ๆ กว่านี้ได้ไหม #261207</span>
+          <span>จะบ้าตายรายวัน มีแต่เรื่องให้ปวดHead กลุ้มHeart #261207</span>
 
           <div className="d-flex align-items-center gap-1">
             <img src="/like.svg" width={20}></img>
@@ -79,8 +83,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-
-        {/* map-loop render Comment component here */}
+        {username.map((user: CommentProps) => (< key={username.replies} {...username}/>))}
       </div>
     </div>
   );

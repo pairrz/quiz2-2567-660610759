@@ -1,15 +1,22 @@
 "use client";
+
+import { CommentProps } from "@/libs/types";
+
+//import { comments } from "@/libs/comments";
+
 export default function Comment({
   ImagePath,
   username,
   commentTitle,
   likes,
   replies,
-}) {
+}: CommentProps) {
   return (
-    <div>
-      your code for Comment component here ...
-      {/* You can use map-loop to render Reply component here */}
+    <div className="border-bottom">
+      <div className="d-flex align-items-center p-3">
+        <img src={ImagePath} width="90px" className="rounded-circle me-4"></img>
+        <span className="text-center display-6 me-auto">{username}</span>
+        </div>
     </div>
   );
 }
