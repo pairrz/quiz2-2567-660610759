@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import { PostOwner } from "@/libs/types";
+//import { PostOwner } from "@/libs/types";
 import { CommentProps } from "@/libs/types";
 import { ReplyProps } from "@/libs/types";
 import { Comme } from "next/font/google";
@@ -83,7 +83,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-        {username.map((user: CommentProps) => (< key={username.replies} {...username}/>))}
       </div>
     </div>
   );
